@@ -77,7 +77,7 @@ header:not(.fixed-logo-header) h1 {
 
 .name-title {
   font-weight: 700;
-  color: #23643a;
+  color: #000; /* Changed to black */
 }
 
 /* Modern, layout-matching green for designation */
