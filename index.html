@@ -5,6 +5,13 @@
   <title>ARGPS Nutritious Lifestyle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("MFNYuDPIGgrfQhb5C"); // Your EmailJS public key
+    })();
+  </script>
 </head>
 <body>
 
@@ -38,7 +45,7 @@
     <section class="about-section">
       <h3>About Me</h3>
       <p>
-        I'm a Wellness Consultant dedicated to helping you achieve a healthier diet. With my personalized approach, we'll work together to create a nutrition plan that fits your unique needs.
+        I'm a Wellness Consultant dedicated to help you achieve a healthier diet. With my personalized approach, we'll work together to create a nutrition plan that fits your unique needs.
       </p>
     </section>
 
@@ -52,8 +59,28 @@
       <div class="contact-card">
         <h3>Contact Us</h3>
         <p>
-          Have questions or want to start your wellness journey? We are happy to help you.
+          Have questions or want to start your wellness journey? Reach out and we'll get back to you as soon as possible.
         </p>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="user_name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="user_email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" style="width:100%;">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="cta-btn">Send Message</button>
+          <div id="form-message" style="margin-top:10px;"></div>
+        </form>
         <div class="contact-details">
           <div><strong>Email:</strong> argpsnutritiouslifestyle25@gmail.com</div>
           <div><strong>Phone:</strong> 8056510590</div>
@@ -71,6 +98,27 @@
       </div>
     </footer>
   </div>
+
+  <!-- EmailJS Form Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form');
+      const msgDiv = document.getElementById('form-message');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        msgDiv.style.color = "#265329";
+        msgDiv.textContent = 'Sending...';
+        emailjs.sendForm('service_p4rnj4d', 'template_yojffu3', form)
+          .then(function() {
+            msgDiv.style.color = 'green';
+            msgDiv.textContent = 'Thank you! Your message has been sent.';
+            form.reset();
+          }, function(error) {
+            msgDiv.style.color = 'red';
+            msgDiv.textContent = 'Oops! Something went wrong. Please try again later.';
+          });
+      });
+    });
+  </script>
 </body>
 </html>
-
