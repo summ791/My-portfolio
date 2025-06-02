@@ -108,14 +108,14 @@
         e.preventDefault();
         msgDiv.style.color = "#265329";
         msgDiv.textContent = 'Sending...';
-        emailjs.sendForm('service_p4rnj4d', 'template_yojffu3', form)
+        emailjs.sendForm('service_p4rnj4d', 'template_g9izt6u', form)
           .then(function() {
             msgDiv.style.color = 'green';
             msgDiv.textContent = 'Thank you! Your message has been sent.';
             form.reset();
           }, function(error) {
             msgDiv.style.color = 'red';
-            msgDiv.textContent = 'Oops! Something went wrong. Please try again later.';
+            msgDiv.textContent = 'Oops! Something went wrong: ' + JSON.stringify(error);
           });
       });
     });
