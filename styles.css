@@ -16,6 +16,7 @@
   height: 60px;
   width: auto;
 }
+/* Add top padding to body to prevent overlap with logo */
 body {
   margin: 0;
   padding-top: 90px;
@@ -30,6 +31,7 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
 .decorative-bg {
   position: absolute;
   top: 0;
@@ -72,16 +74,19 @@ header:not(.fixed-logo-header) h1 {
   color: #23643a;
   margin-bottom: 22px;
 }
+
 .name-title {
   font-weight: 700;
   color: #000;
 }
+
 .designation {
   color: #31a368;
   font-weight: 600;
   font-size: 1.06em;
   letter-spacing: 0.5px;
 }
+
 .hero-visuals {
   margin-bottom: 14px;
   height: 24px;
@@ -99,15 +104,18 @@ header:not(.fixed-logo-header) h1 {
   position: relative;
   z-index: 1;
 }
+
 .wellness-path h2 {
   color: #265329;
   margin-bottom: 8px;
   font-size: 1.45em;
 }
+
 .wellness-path p {
   color: #3d6249;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
+
 .cta-btn {
   background: #faa33b;
   color: #fff;
@@ -141,8 +149,9 @@ header:not(.fixed-logo-header) h1 {
   color: #178c54;
   margin-top: 0;
 }
+
 .about-section {
-  max-width: 700px;
+  max-width: 430px;
   margin: 32px auto 0 auto;
   background: #f0f8fa;
   border-radius: 22px;
@@ -151,40 +160,27 @@ header:not(.fixed-logo-header) h1 {
   text-align: left;
   position: relative;
 }
-
-/* --- About Me Section: Modern photo + text layout --- */
+.about-section h2 {
+  color: #178c54;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 .about-photo-text {
   display: flex;
-  align-items: flex-start;
-  gap: 32px;
+  align-items: center;
+  gap: 20px;
 }
 .about-photo {
-  width: 144px;
-  height: 144px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 50%;
-  background: #C6E6F5;
-  box-shadow: 0 4px 16px #0001;
-  margin-right: 0;
-  flex-shrink: 0;
+  background: #bae7f7;
+  border: 3px solid #e3f6fb;
+  box-shadow: 0 2px 8px #0001;
   display: block;
 }
-.about-photo-text h3 {
-  color: #23455D;
-  margin: 0 0 16px 0;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: Arial, 'Segoe UI', sans-serif;
-}
-.about-photo-text p {
-  color: #23455D;
-  font-size: 1.25rem;
-  margin: 0;
-  font-family: Arial, 'Segoe UI', sans-serif;
-  line-height: 1.6;
-}
 
-/* --- 100% Online Box Section --- */
 .online-section {
   display: flex;
   justify-content: center;
@@ -205,6 +201,7 @@ header:not(.fixed-logo-header) h1 {
   max-width: 320px;
   letter-spacing: 1px;
 }
+
 .contact-section {
   margin: 38px 0 0 0;
   display: flex;
@@ -269,6 +266,7 @@ header:not(.fixed-logo-header) h1 {
 .contact-details strong {
   color: #faa33b;
 }
+
 .footer {
   background: #eafdf5;
   padding: 16px 0 6px 0;
@@ -284,20 +282,6 @@ header:not(.fixed-logo-header) h1 {
 }
 
 /* Responsive Design */
-@media (max-width: 700px) {
-  .about-photo-text {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
-  .about-photo {
-    margin: 0 0 16px 0;
-  }
-  .about-section {
-    padding: 16px 4vw;
-    max-width: 98vw;
-  }
-}
 @media (max-width: 600px) {
   .about-section, .contact-card, .wellness-path, .deep-dive {
     padding: 16px 4vw;
@@ -308,5 +292,14 @@ header:not(.fixed-logo-header) h1 {
   }
   .contact-card {
     padding: 18px 4vw;
+  }
+  .about-photo-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .about-photo {
+    width: 110px;
+    height: 110px;
   }
 }
