@@ -114,7 +114,7 @@ header:not(.fixed-logo-header) h1 {
 
 .wellness-path p {
   color: #3d6249;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .cta-btn {
@@ -166,24 +166,6 @@ header:not(.fixed-logo-header) h1 {
   margin-top: 0;
 }
 
-/* About Me photo and text layout */
-.about-photo-text {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.about-photo {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 50%;
-  background: #bae7f7;
-  border: 3px solid #e3f6fb;
-  box-shadow: 0 2px 8px #0001;
-  max-width: 100%;
-  height: auto;
-}
-
 /* --- 100% Online Box Section --- */
 .online-section {
   display: flex;
@@ -231,11 +213,9 @@ header:not(.fixed-logo-header) h1 {
   display: flex;
   gap: 12px;
   margin-bottom: 14px;
-  flex-wrap: wrap;
 }
 .form-group {
   flex: 1;
-  min-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -289,8 +269,6 @@ header:not(.fixed-logo-header) h1 {
 }
 
 /* Responsive Design */
-
-/* Mobile (up to 600px) */
 @media (max-width: 600px) {
   .about-section, .contact-card, .wellness-path, .deep-dive {
     padding: 16px 4vw;
@@ -301,84 +279,5 @@ header:not(.fixed-logo-header) h1 {
   }
   .contact-card {
     padding: 18px 4vw;
-  }
-  .about-photo-text {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .about-photo {
-    width: 90px;
-    height: 90px;
-  }
-  .form-row {
-    flex-direction: column;
-  }
-  .fixed-logo-header {
-    padding: 12px 12px;
-  }
-  .cta-btn {
-    padding: 12px 30px;
-    font-size: 1em;
-  }
-}
-
-/* Tablet (601px to 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .about-section, .contact-card, .wellness-path, .deep-dive {
-    padding: 20px 5vw;
-    max-width: 90vw;
-  }
-  header:not(.fixed-logo-header) h1 {
-    font-size: 2.4em;
-  }
-  .contact-card {
-    padding: 24px 5vw;
-  }
-  .about-photo-text {
-    flex-direction: row; /* keep horizontal layout */
-    gap: 18px;
-    align-items: center;
-  }
-  .about-photo {
-    width: 100px;
-    height: 100px;
-  }
-  .fixed-logo-header {
-    padding: 12px 24px;
-  }
-  .cta-btn {
-    padding: 14px 40px;
-    font-size: 1.15em;
-  }
-}
-
-/* Desktop (901px and above) */
-@media (min-width: 901px) {
-  .about-section, .contact-card, .wellness-path, .deep-dive {
-    padding: 28px 24px;
-    max-width: 480px;
-  }
-  header:not(.fixed-logo-header) h1 {
-    font-size: 2.7em;
-  }
-  .contact-card {
-    padding: 32px 36px;
-  }
-  .about-photo-text {
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-  }
-  .about-photo {
-    width: 110px;
-    height: 110px;
-  }
-  .fixed-logo-header {
-    padding: 12px 16px;
-  }
-  .cta-btn {
-    padding: 13px 36px;
-    font-size: 1.13em;
   }
 }
