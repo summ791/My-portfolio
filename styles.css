@@ -301,5 +301,8 @@ header:not(.fixed-logo-header) h1 {
     align-items: flex-start;
     gap: 12px;
   }
-  /* .about-photo size override removed */
+  .about-photo {
+    width: 90px;
+    height: 90px;
+  }
 }
