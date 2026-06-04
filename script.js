@@ -1,5 +1,7 @@
 const body = document.body;
 const toggle = document.querySelector(".theme-toggle");
+const nav = document.querySelector(".nav");
+const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".nav-links a");
 const glow = document.querySelector(".cursor-glow");
 const contactForms = document.querySelectorAll(".contact-form");
@@ -40,6 +42,37 @@ if (toggle) {
   toggle.addEventListener("click", () => {
     body.classList.toggle("dark");
     localStorage.setItem("portfolio-theme", body.classList.contains("dark") ? "dark" : "light");
+  });
+}
+
+const closeMobileNav = () => {
+  if (!nav || !navToggle) return;
+  nav.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Open navigation menu");
+};
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen.toString());
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!nav.classList.contains("open")) return;
+    if (nav.contains(event.target)) return;
+    closeMobileNav();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 940) closeMobileNav();
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 940) closeMobileNav();
+    });
   });
 }
 
