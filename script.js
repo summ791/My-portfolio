@@ -31,15 +31,6 @@ const showToast = (message, type = "success") => {
   }, 3200);
 };
 
-body.classList.add("loading");
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    body.classList.add("loaded");
-    body.classList.remove("loading");
-  }, 650);
-});
-
 const savedTheme = localStorage.getItem("portfolio-theme");
 if (savedTheme === "dark") {
   body.classList.add("dark");
