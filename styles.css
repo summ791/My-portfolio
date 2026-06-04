@@ -496,6 +496,14 @@ body.dark .theme-toggle i::after {
   font-weight: 900;
 }
 
+@media (max-width: 64em) {
+  .hero-actions .icon-btn {
+    width: clamp(2.5rem, 8vw, 3rem);
+    min-width: clamp(2.5rem, 8vw, 3rem);
+    align-self: flex-start;
+  }
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -1944,10 +1952,6 @@ footer nav {
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
-  }
-
-  .hero-actions .icon-btn {
-    width: 100%;
   }
 
   .hero-stats {
